@@ -26,7 +26,8 @@ def sniff_packet():
     # Return the packet summary to the frontend
     if last_packet:
         # Use `show(dump=True)` to capture the full packet details as a string
-        return jsonify({'packet_summary': last_packet})
+        report = last_packet.show(dump=True)
+        return jsonify({'packet_summary': report})
     else:
         return jsonify({'packet_summary': 'No packet captured'})
 
