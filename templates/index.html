@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Packet Sniffer</title>
+    <script>
+        async function sniffPacket() {
+            // Send a POST request to the Flask server
+            const response = await fetch('/sniff_packet', {
+                method: 'POST'
+            });
+            
+            // Parse the JSON response
+            const data = await response.json();
+            
+            // Display the packet summary
+            document.getElementById('result').innerText = data.packet_summary;
+        }
+    </script>
+</head>
+<body>
+    <h1>Packet Sniffer</h1>
+    <button onclick="sniffPacket()">Sniff a Packet</button>
+    <pre id="result"></pre>
+</body>
+</html>

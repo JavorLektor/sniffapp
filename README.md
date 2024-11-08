@@ -1,4 +1,4 @@
 # sniffapp
 Sniff a packet of the wire and displays that.
 
-Prototype.
+pip install -r .\requirements
